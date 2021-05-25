@@ -29,8 +29,36 @@
     
 // }
 
+/*********   Überlegungen **********/
+
+/* 
+1. Einer Variablen kann Ihr eigener Wert zugewiesen werden.
+Solange die Variable existiert, bleibt dieser erhalten.
+hier: Aufsummierung
+*/
+
+/* Zu "Fuß" - DRY !!! */
+// let a = 0; // Anfangswert
+// ausgabe("inhalt von a: " + a);
+// a = a + 1;  // a = 0 + 1
+// ausgabe("inhalt von a: " + a);
+// a = a + 1;  // a = 1 + 1
+// ausgabe("inhalt von a: " + a);
+// a = a + 1;  // a = 2 + 1
+// ausgabe("inhalt von a: " + a);
+
+/* Besser: mit FOR-Schleife */
+let a = 0; // Anfangswert
+for (let i = 0; i < 5; i++) {
+    ausgabe("ausgabe aus der loop: " + a);
+    a += 1; 
+}
+
+ausgabe("ausgabe nach der loop: " + a);
+
+
 /*** 02b. Funktionalität mit Array 2 */
-ausgabe(getSentenceArr2(["Ich","bin","Max","Mütze"])); // Test
+// ausgabe(getSentenceArr2(["Ich","bin","Max","Mütze"])); // Test
 function getSentenceArr2(arr) {
     let gap = " ";
     let punct = ".";
