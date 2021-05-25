@@ -48,18 +48,40 @@ hier: Aufsummierung
 // ausgabe("inhalt von a: " + a);
 
 /* Besser: mit FOR-Schleife */
-let a = 0; // Anfangswert
-for (let i = 0; i < 5; i++) {
-    ausgabe("ausgabe aus der loop: " + a);
-    a += 1; 
-}
+// let a = 0; // Anfangswert
+// for (let i = 0; i < 5; i++) {
+//     ausgabe("ausgabe aus der loop: " + a);
+//     a += 1; 
+// }
 
-ausgabe("ausgabe nach der loop: " + a);
+// ausgabe("ausgabe nach der loop: " + a);
+
+/* 
+1. Einer Variablen kann Ihr eigener Wert zugewiesen werden.
+Solange die Variable existiert, bleibt dieser erhalten.
+hier: Konkatenation eines Strings
+*/
+
+// let str = ""; // Anfangswert
+// let addStr = "Test";
+// let gap = " ";
+// let punct = ".";
+
+
+// for (let i = 0; i < 5; i++) {
+//     str += addStr + gap;
+
+// }
+// ausgabe(str + punct);
 
 
 /*** 02b. Funktionalität mit Array 2 */
-// ausgabe(getSentenceArr2(["Ich","bin","Max","Mütze"])); // Test
+ausgabe(getSentenceArr2(["Ich","bin","Max","der","alte","Penner","Mütze"])); // Test
+ausgabe(getSentenceArr2(["Ich","bin"])); // Test
+ausgabe(getSentenceArr2(["Ich","denke","also","bin","ich"])); // Test
+
 function getSentenceArr2(arr) {
+    let str = ""; // Anfangswert
     let gap = " ";
     let punct = ".";
     // let str = arr[0] + gap +
@@ -69,16 +91,14 @@ function getSentenceArr2(arr) {
     //           punct;
     
     for (let i = 0; i < arr.length; i++) {
-    ausgabe(arr[i]);
-            
+        if (i != arr.length - 1) {
+            str += arr[i] + gap;
+        } else {
+            str += arr[i] + punct;
+        }
     }
-    
-    return "Warum?";
+    return str;
 }
-
-
-
-
 
 
 /*** 02a. Funktionalität mit Array */
